@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Spring Boot - POST-GET AJAX Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="webjars/material-design-lite/1.3.0/material.css"/>
+    <script src="webjars/material-design-lite/1.3.0/material.min.js"></script>
+    <script src="webjars/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">BookingOut.com</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">Hotels</a>
+                    <a class="mdl-navigation__link" href="">Flights</a>
+                    <a class="mdl-navigation__link" href="">Rental Cars</a>
+                    <a class="mdl-navigation__link" href="">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Boooking.io</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Hotels</a>
+                <a class="mdl-navigation__link" href="">Flights</a>
+                <a class="mdl-navigation__link" href="">Rental Cars</a>
+                <a class="mdl-navigation__link" href="">Contact Us</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- Accent-colored raised button with ripple -->
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Button
+                </button>
+                <!-- Number badge on icon -->
+                <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">account_box</div>
+                <table class="mdl-data-table mdl-js-data-table">
+                    <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Name</th>
+                        <th class="mdl-data-table__cell--non-numeric">Nickname</th>
+                        <th>Age</th>
+                        <th class="mdl-data-table__cell--non-numeric">Living?</th>
+                    </tr>
+                    </thead>
+                    <tbody id="bookingsTableBody">
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">John Lennon</td>
+                        <td class="mdl-data-table__cell--non-numeric">The smart one</td>
+                        <td>40</td>
+                        <td class="mdl-data-table__cell--non-numeric">No</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Paul McCartney</td>
+                        <td class="mdl-data-table__cell--non-numeric">The cute one</td>
+                        <td>73</td>
+                        <td class="mdl-data-table__cell--non-numeric">Yes</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">George Harrison</td>
+                        <td class="mdl-data-table__cell--non-numeric">The shy one</td>
+                        <td>58</td>
+                        <td class="mdl-data-table__cell--non-numeric">No</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Ringo Starr</td>
+                        <td class="mdl-data-table__cell--non-numeric">The funny one</td>
+                        <td>74</td>
+                        <td class="mdl-data-table__cell--non-numeric">Yes</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <footer class="mdl-mega-footer">
+                <div class="mdl-mega-footer__middle-section">
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">Features</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Updates</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">Details</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="#">Specs</a></li>
+                            <li><a href="#">Tools</a></li>
+                            <li><a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">Technology</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="#">How it works</a></li>
+                            <li><a href="#">Patterns</a></li>
+                            <li><a href="#">Usage</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Contracts</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading">FAQ</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="#">Questions</a></li>
+                            <li><a href="#">Answers</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="mdl-mega-footer__bottom-section">
+                    <div class="mdl-logo">Title</div>
+                    <ul class="mdl-mega-footer__link-list">
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Privacy & Terms</a></li>
+                    </ul>
+                </div>
+
+            </footer>
+        </main>
+    </div>
+</div>
+<script>
+    var connected = false;
+    var connect = function () {
+        var source = new EventSource('/bookings');
+        source.addEventListener('open', function (e) {
+            console.log('connected');
+        });
+        source.addEventListener('message', function (e) {
+            console.log(e.data);
+            $('#bookingsTableBody')
+                .append('<tr><td class="mdl-data-table__cell--non-numeric">' + e.data + '</td>');
+        }, false);
+        source.addEventListener('error', function (e) {
+            if (e.readyState == EventSource.CLOSED) {
+                connected = false;
+                connect();
+            }
+        }, false);
+    };
+    connect();
+</script>
+</body>
+</html>
